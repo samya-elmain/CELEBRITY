@@ -6,8 +6,7 @@ const Celebritie = require('../models/Celebritie')
 const getCelebrities = async (req, res) => {
     const celebrities = await Celebritie.find({})
     res.status(200).json(celebrities)
-}
-
+} 
 
 const getCelebritie = async (req, res) => {
     const { id } = req.params
@@ -27,9 +26,9 @@ const getCelebritie = async (req, res) => {
 
 
 const createCelebritie = async (req,res) => {
-    const {name, url, image} = req.body
+    const {name, categorie, images} = req.body
     try{
-        const celebritie = await Celebritie.create({name, url, image})
+        const celebritie = await Celebritie.create({name, categorie, images})
         res.status(200).json(celebritie)
     }catch(error) {
         res.status(400).json({error: error.message})
@@ -73,7 +72,7 @@ const updateCelebritie = async (req, res) => {
 }
 
 
-module.export = {
+module.exports = {
     getCelebritie,
     getCelebrities,
     createCelebritie,

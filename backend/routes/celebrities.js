@@ -10,7 +10,7 @@ const {
 
 const router = express.Router()
 
-router.get('/', getCelebrities) 
+router.get('/', getCelebrities)
 
 router.get('/:id', getCelebritie)
 

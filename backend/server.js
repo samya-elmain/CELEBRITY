@@ -8,7 +8,7 @@ const app = express()
 mongoose.connect(process.env.MONGO_URI)
    .then(() => {
         app.listen(process.env.PORT, () => {
-            console.log('server is running in port :', PORT)
+            console.log('server is running in port :', process.env.PORT)
     })
    })
    .catch((error) => {
